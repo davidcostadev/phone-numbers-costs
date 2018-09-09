@@ -11,7 +11,7 @@
     "start": "npm run build && http-server dist -o",
     "build": "webpack -p",
     "watch": "webpack --watch --progress",
-    "test": "jest",
+    "test": "jest --coverage",
     "jest:update": "jest --updateSnapshot",
     "jest:coverage": "jest --coverage",
     "coverage": "http-server ./coverage/lcov-report -o"
