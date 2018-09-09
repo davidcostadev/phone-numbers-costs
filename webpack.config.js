@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const server = require('./server');
+
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './index.html',
   filename: 'index.html',
@@ -32,6 +34,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
+    before: server,
   },
   module: {
     rules: [
