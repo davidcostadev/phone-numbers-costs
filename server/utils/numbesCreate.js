@@ -15,9 +15,11 @@ const getNumberCosts = c => ([
   c % 100,
 ]);
 
+const fixPrecision = n => parseFloat(n.toFixed(2));
+
 const formartItem = ([number, costs]) => ([
   number + 555000000,
-  (costs * 0.01) + 1,
+  fixPrecision((costs * 0.01) + 1),
 ]);
 
 const formartToObj = ([number, costs]) => ({
