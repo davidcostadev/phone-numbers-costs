@@ -1,0 +1,23 @@
+.numbers {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__item {
+    display:flex;
+    justify-content: space-between;
+    padding: $space;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    background-color: $white;
+
+    &:last-child {
+      border-bottom-width: 0;
+    }
+  }
+
+}

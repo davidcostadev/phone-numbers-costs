@@ -1,0 +1,10 @@
+$vertical-space: 20px;
+
+$horizontal-space: 15px;
+
+$space: $vertical-space $horizontal-space;
+
+$topbar-height: 65px;
+$bottombar-height: 60px;
+
+$space-inner: ($vertical-space / 3) ($horizontal-space / 3);
