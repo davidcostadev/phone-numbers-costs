@@ -19,6 +19,7 @@ describe('numbesCreate', () => {
   });
 
   it('formartItem should works', () => {
+    expect(formartItem([14, 14])).toEqual([555000014, 1.14]);
     expect(formartItem([50, 50])).toEqual([555000050, 1.5]);
     expect(formartItem([150, 50])).toEqual([555000150, 1.5]);
     expect(formartItem([250, 50])).toEqual([555000250, 1.5]);
