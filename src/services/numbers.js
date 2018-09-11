@@ -1,5 +1,5 @@
 import axios from 'axios';
-import mountQuery from '../utils/parse';
+import { mountQuery } from '../utils/parse';
 
 export const defaultQuery = {
   page: 1,
