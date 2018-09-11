@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Paginator from '../../src/components/Paginator';
+import Paginator from '../../../client/components/Paginator';
 
 configure({ adapter: new Adapter() });
 

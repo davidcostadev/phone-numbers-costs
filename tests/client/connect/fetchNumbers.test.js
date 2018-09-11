@@ -4,14 +4,14 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import fetchNumbers from '../../src/connect/fetchNumbers';
-import { request } from '../../src/store/modules/numbers';
+import fetchNumbers from '../../../client/connect/fetchNumbers';
+import { request } from '../../../client/store/modules/numbers';
 
 configure({ adapter: new Adapter() });
 
 const mockStore = configureMockStore([thunk]);
 
-jest.mock('../../src/store/modules/numbers', () => ({
+jest.mock('../../../client/store/modules/numbers', () => ({
   request: jest.fn(),
 }));
 

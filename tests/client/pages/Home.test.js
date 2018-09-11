@@ -4,7 +4,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { MemoryRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import Home from '../../src/pages/Home';
+import Home from '../../../client/pages/Home';
 
 const mockStore = configureMockStore([thunk]);
 
