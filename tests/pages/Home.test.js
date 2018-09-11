@@ -16,6 +16,7 @@ describe('Home Component', () => {
       numbers: {
         data: [],
         meta: null,
+        loading: false,
       },
     });
   });
@@ -48,6 +49,7 @@ describe('Home Component', () => {
             perPage: 2,
             totalPages: 10,
           },
+          loading: false,
         },
       });
 
