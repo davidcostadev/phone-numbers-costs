@@ -1,10 +1,9 @@
 .bottombar {
-  padding: 14px $horizontal-space;
   background-color: $secondary-color;
+  bottom: 0;
   color: $white;
-
+  padding: 14px $horizontal-space;
   position: fixed;
   width: 100%;
-  bottom:0;
   z-index: $index-upcontent;
 }

@@ -2,7 +2,7 @@
 
 exports[`Home Component Render default 1`] = `
 <div
-  id="page"
+  className="page"
 >
   <header
     className="topbar"
@@ -53,7 +53,7 @@ exports[`Home Component Render default 1`] = `
     </div>
   </header>
   <main
-    id="wrap"
+    className="wrap"
   >
     <div
       className="numbers__list"

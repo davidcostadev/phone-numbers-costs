@@ -14,11 +14,11 @@ import setPage from '../connect/setPage';
 import fetchNumbers from '../connect/fetchNumbers';
 
 const App = ({ numbers, onChangePerPage, onClickPage }) => (
-  <div id="page">
+  <div className="page">
     <Topbar title="Phone and Costs">
       <SelectPerPage onChangePerPage={onChangePerPage} />
     </Topbar>
-    <main id="wrap">
+    <main className="wrap">
       <Numbers numbers={numbers} />
     </main>
     <Bottombar>

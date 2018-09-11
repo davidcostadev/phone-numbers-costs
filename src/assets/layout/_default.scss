@@ -5,20 +5,20 @@
 }
 
 body {
+  background-color: $body-bg;
+  color: $text-color;
   font-family: $font-family-default;
   font-size: $font-size-default;
-  color: $text-color;
-  background-color: $body-bg
 }
 
-#page {
-  padding-top: $vertical-space;
-  padding-bottom: $vertical-space;
-  margin-top: $topbar-height;
+.page {
   margin-bottom: $bottombar-height;
+  margin-top: $topbar-height;
+  padding-bottom: $vertical-space;
+  padding-top: $vertical-space;
 }
 
-#wrap {
+.wrap {
   padding-left: $horizontal-space;
   padding-right: $horizontal-space;
 }
