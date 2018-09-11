@@ -8,12 +8,8 @@
   "private": true,
   "scripts": {
     "dev": "export NODE_ENV=development && webpack-dev-server --inline --open --mode=development",
-    "start": "npm run build && http-server dist -o",
-    "build": "webpack -p",
-    "watch": "webpack --watch --progress",
+    "start": "export NODE_ENV=production && webpack-dev-server --inline --open --mode=production",
     "test": "jest --coverage",
-    "jest:update": "jest --updateSnapshot",
-    "jest:coverage": "jest --coverage",
     "coverage": "http-server ./coverage/lcov-report -o"
   },
   "devDependencies": {
