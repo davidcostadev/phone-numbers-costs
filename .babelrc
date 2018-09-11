@@ -1,10 +1,6 @@
 {
   "plugins": [
     [
-      "babel-plugin-styled-components",
-      { "displayName": true, "ssr": false }
-    ],
-    [
       "transform-runtime",
       {
         "polyfill": false,
