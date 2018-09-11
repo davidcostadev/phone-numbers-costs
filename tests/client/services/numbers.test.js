@@ -1,5 +1,5 @@
 import axios from 'axios';
-import numbers from '../../src/services/numbers';
+import numbers from '../../../client/services/numbers';
 
 jest.mock('axios');
 

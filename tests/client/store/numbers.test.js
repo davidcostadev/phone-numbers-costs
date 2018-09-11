@@ -1,7 +1,7 @@
-import * as Numbers from '../../src/store/modules/numbers';
-import NumberService from '../../src/services/numbers';
+import * as Numbers from '../../../client/store/modules/numbers';
+import NumberService from '../../../client/services/numbers';
 
-jest.mock('../../src/services/numbers.js', () => ({
+jest.mock('../../../client/services/numbers.js', () => ({
   get: jest.fn(),
 }));
 

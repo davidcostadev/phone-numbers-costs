@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Numbers from '../../src/components/Numbers';
+import Numbers from '../../../client/components/Numbers';
 
 describe('Numbers Component', () => {
   describe('Render', () => {

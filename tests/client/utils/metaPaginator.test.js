@@ -6,7 +6,7 @@ import metaPaginator, {
   getNextPage,
   getPreviousPage,
   getLoopPage,
-} from '../../src/utils/metaPaginator';
+} from '../../../client/utils/metaPaginator';
 
 
 describe('metaPaginator', () => {

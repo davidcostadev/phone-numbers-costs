@@ -1,14 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Topbar from '../../src/components/Topbar';
+import Bottombar from '../../../client/components/Bottombar';
 
-describe('Topbar Component', () => {
+describe('Bottombar Component', () => {
   describe('Render', () => {
     it('default', () => {
       const tree = renderer.create((
-        <Topbar title="Titulo">
+        <Bottombar>
           <div>children</div>
-        </Topbar>
+        </Bottombar>
       )).toJSON();
 
       expect(tree).toMatchSnapshot();

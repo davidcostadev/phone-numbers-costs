@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Options from '../../../src/components/forms/Options';
+import Options from '../../../../client/components/forms/Options';
 
 describe('Options Component', () => {
   let options;

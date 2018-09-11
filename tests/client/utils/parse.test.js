@@ -1,4 +1,4 @@
-import { mountQuery, floatToDolar, formatPhone } from '../../src/utils/parse';
+import { mountQuery, floatToDolar, formatPhone } from '../../../client/utils/parse';
 
 describe('parse', () => {
   describe('formatPhone', () => {

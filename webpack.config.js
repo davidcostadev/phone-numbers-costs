@@ -30,7 +30,7 @@ function resolve(dir) {
 }
 
 module.exports = {
-  entry: resolve('src/main.js'),
+  entry: resolve('client/main.js'),
   output: {
     path: resolve('dist'),
     filename: 'js/[name].[hash].js',

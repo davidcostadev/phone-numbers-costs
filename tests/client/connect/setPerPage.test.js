@@ -3,12 +3,12 @@ import renderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import setPerPage from '../../src/connect/setPerPage';
-import { request } from '../../src/store/modules/numbers';
+import setPerPage from '../../../client/connect/setPerPage';
+import { request } from '../../../client/store/modules/numbers';
 
 const mockStore = configureMockStore([thunk]);
 
-jest.mock('../../src/store/modules/numbers', () => ({
+jest.mock('../../../client/store/modules/numbers', () => ({
   request: jest.fn(),
 }));
 

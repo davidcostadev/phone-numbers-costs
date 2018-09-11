@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Loading from '../../src/components/Loading';
+import Loading from '../../../client/components/Loading';
 
 describe('Loading Component', () => {
   describe('Render', () => {
