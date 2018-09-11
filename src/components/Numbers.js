@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { numbersType, numberType } from '../types';
+import { floatToDolar, formatPhone } from '../utils/parse';
 
 const Number = ({ number }) => (
   <div className="numbers__item">
-    <div className="numbers__number">{number.number}</div>
-    <div className="numbers__costs">{number.costs}</div>
+    <div className="numbers__number">{formatPhone(number.number)}</div>
+    <div className="numbers__costs">{floatToDolar(number.costs)}</div>
   </div>
 );
 

@@ -1,6 +1,7 @@
 import qs from 'querystring';
+import * as R from 'ramda';
 
-const mountQuery = (url, query = {}) => {
+export const mountQuery = (url, query = {}) => {
   if (Object.keys(query).length) {
     return `${url}?${qs.stringify(query)}`;
   }
@@ -8,4 +9,11 @@ const mountQuery = (url, query = {}) => {
   return url;
 };
 
-export default mountQuery;
+export const floatToDolar = new Intl
+  .NumberFormat('en', { style: 'currency', currency: 'USD' }).format;
+
+export const formatPhone = R.compose(
+  R.join(' '),
+  R.splitEvery(3),
+  R.toString(),
+);

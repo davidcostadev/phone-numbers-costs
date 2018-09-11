@@ -22,12 +22,12 @@ exports[`Numbers Component Render with props 1`] = `
     <div
       className="numbers__number"
     >
-      555000000
+      555 000 000
     </div>
     <div
       className="numbers__costs"
     >
-      1
+      $1.00
     </div>
   </div>
   <div
@@ -36,12 +36,12 @@ exports[`Numbers Component Render with props 1`] = `
     <div
       className="numbers__number"
     >
-      555000001
+      555 000 001
     </div>
     <div
       className="numbers__costs"
     >
-      1.01
+      $1.01
     </div>
   </div>
 </div>
