@@ -13,5 +13,9 @@
 `npm run dev` or
 `npm run start`
 
-## author
+# Print
+
+[![prone-print](https://github.com/davidcostadev/phone-numbers-costs/blob/master/static/phone-print.png)](https://github.com/davidcostadev/phone-numbers-costs/blob/master/static/phone-print.png)
+
+## Author
 - David Costa <davidcostadev@gmail.com>
