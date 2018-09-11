@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 
 const Loading = ({ children, loading }) => (
   <div className="page">
-    <div className={classname(
-      'page__loader',
-      { 'page__loader--loading': loading },
-    )}
+    <div
+      className={classname(
+        'page__loader',
+        { 'page__loader--loading': loading },
+      )}
     >
       loading...
     </div>
