@@ -1,7 +1,9 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+import HomePage from './pages/Home';
 
 const App = () => (
-  <p>I am Alive</p>
+  <Route path="/" component={HomePage} />
 );
 
 

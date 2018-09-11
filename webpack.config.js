@@ -35,6 +35,7 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     before: server,
+    historyApiFallback: true,
   },
   module: {
     rules: [

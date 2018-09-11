@@ -1,0 +1,36 @@
+.paginator {
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    background-color: $btn-primary-color;
+    border-width: 0;
+    color: $black;
+    cursor: pointer;
+    margin-left: 4px;
+    margin-right: 4px;
+    min-width: 36px;
+    padding: $space-inner;
+    text-align: center;
+
+    &:hover {
+      background-color: $btn-primary-color-hover;
+    }
+
+    &:active {
+      background-color: $btn-primary-color-active;
+    }
+
+    &--active,
+    &--active:hover {
+      background-color: darken($btn-primary-color-active, 15%);
+      color: $white;
+    }
+
+    &--disabled,
+    &--disabled:hover {
+      background-color: $primary-color-disabled;
+      color: $text-color-disabled;
+    }
+  }
+}

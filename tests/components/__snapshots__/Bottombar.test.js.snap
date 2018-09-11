@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bottombar Component Render default 1`] = `
+<div
+  className="bottombar"
+>
+  <div>
+    children
+  </div>
+</div>
+`;

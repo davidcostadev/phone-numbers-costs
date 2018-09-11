@@ -1,21 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-
 import './assets/style.scss';
 
 import store from './store';
-import load from './load';
 import App from './App';
-
-load(store.dispatch);
 
 render(
   <Provider store={store}>
-    <HashRouter>
+    <Router>
       <App />
-    </HashRouter>
+    </Router>
   </Provider>,
   document.getElementById('root'),
 );

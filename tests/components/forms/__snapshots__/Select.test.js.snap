@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select Component Render default 1`] = `
+<select
+  id="id"
+  onChange={[Function]}
+  value=""
+/>
+`;
+
+exports[`Select Component Render with props 1`] = `
+<select
+  id="id"
+  onChange={[Function]}
+  value=""
+>
+  <option
+    value={1}
+  >
+    One
+  </option>
+  <option
+    value={2}
+  >
+    Two
+  </option>
+</select>
+`;
