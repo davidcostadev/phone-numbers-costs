@@ -13,12 +13,44 @@ describe('Home Component', () => {
 
   beforeEach(() => {
     store = mockStore({
-      numbers: [],
+      numbers: {
+        data: [],
+        meta: null,
+      },
     });
   });
 
   describe('Render', () => {
     it('default', () => {
+      const tree = renderer.create((
+        <MemoryRouter>
+          <Provider store={store}>
+            <Route render={props => (
+              <Home {...props} />
+            )}
+            />
+          </Provider>
+        </MemoryRouter>
+      )).toJSON();
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('with props', () => {
+      store = mockStore({
+        numbers: {
+          data: [
+            { number: 555000000, costs: 1 },
+            { number: 555000001, costs: 2 },
+          ],
+          meta: {
+            page: 1,
+            perPage: 2,
+            totalPages: 10,
+          },
+        },
+      });
+
       const tree = renderer.create((
         <MemoryRouter>
           <Provider store={store}>

@@ -25,7 +25,10 @@ describe('fetchNumbers', () => {
       { number: 555000001, costs: 1.01 },
     ];
     store = mockStore({
-      numbers: collection,
+      numbers: {
+        data: collection,
+      },
+
     });
 
     ComponentMock = () => <span>mock</span>;
@@ -41,8 +44,12 @@ describe('fetchNumbers', () => {
       history: {
         push: jest.fn(),
         location: {
-          search: '',
+          search: '?page=1&perPage=10',
         },
+      },
+      meta: {
+        page: 1,
+        perPage: 10,
       },
     };
     const ComponentMockSetPage = fetchNumbers(ComponentMock);
@@ -53,8 +60,8 @@ describe('fetchNumbers', () => {
     ));
 
     expect(request).toBeCalledWith(store.dispatch, {
-      page: 1,
-      perPage: 100,
+      page: '1',
+      perPage: '10',
     });
   });
 });

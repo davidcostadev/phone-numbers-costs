@@ -21,7 +21,6 @@ describe('setPage', () => {
     ComponentMock = () => <span>mock</span>;
   });
 
-
   it('default', () => {
     const props = {
       dispatch: 'dispatch',
@@ -31,20 +30,34 @@ describe('setPage', () => {
       },
       history: {
         push: jest.fn(),
+        location: {
+          search: '?page=1&perPage=10',
+        },
+      },
+      meta: {
+        page: 1,
+        perPage: 10,
       },
     };
     const ComponentMockSetPage = setPage(ComponentMock);
+
     const tree = renderer.create((
       <Provider store={store}>
         <ComponentMockSetPage {...props} />
       </Provider>
     )).toTree();
 
-    tree.rendered.rendered.props.onClickPage(2);
+    tree.rendered.rendered.rendered.props.onClickPage(1);
+
+    expect(props.history.push).toBeCalledWith({
+      search: '?page=1&perPage=10',
+    });
+
+    tree.rendered.rendered.rendered.props.onClickPage(2);
 
     expect(request).toBeCalledWith('dispatch', {
       page: 2,
-      perPage: 10,
+      perPage: '10',
     });
 
     expect(props.history.push).toBeCalledWith({

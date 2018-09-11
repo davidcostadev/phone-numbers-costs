@@ -25,8 +25,19 @@ describe('setPerPage', () => {
   it('default', () => {
     const props = {
       dispatch: 'dispatch',
+      query: {
+        page: 1,
+        perPage: 10,
+      },
       history: {
         push: jest.fn(),
+        location: {
+          search: '?page=1&perPage=10',
+        },
+      },
+      meta: {
+        page: 1,
+        perPage: 10,
       },
     };
     const ComponentMockSetPerPage = setPerPage(ComponentMock);
@@ -36,7 +47,7 @@ describe('setPerPage', () => {
       </Provider>
     )).toTree();
 
-    tree.rendered.rendered.props.onChangePerPage(500);
+    tree.rendered.rendered.rendered.props.onChangePerPage(500);
 
     expect(request).toBeCalledWith('dispatch', {
       page: 1,

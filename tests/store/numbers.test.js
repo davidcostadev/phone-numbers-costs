@@ -8,9 +8,15 @@ jest.mock('../../src/services/numbers.js', () => ({
 describe('Store Numbers', () => {
   let state;
   let collection;
+  let meta;
 
   beforeEach(() => {
     state = Numbers.init;
+    meta = {
+      page: 1,
+      perPage: 100,
+      totalPages: 10,
+    };
     collection = [
       { number: 555000000, costs: 1 },
     ];
@@ -22,7 +28,10 @@ describe('Store Numbers', () => {
         type: '@@INIT',
       };
 
-      expect(Numbers.default(undefined, action)).toEqual([]);
+      expect(Numbers.default(undefined, action)).toEqual({
+        meta: null,
+        data: [],
+      });
     });
 
     it('RECEIVE', () => {
@@ -44,6 +53,7 @@ describe('Store Numbers', () => {
       const dispatch = jest.fn();
       NumberService.get.mockResolvedValue({
         data: {
+          meta,
           data: collection,
         },
       });
@@ -52,9 +62,12 @@ describe('Store Numbers', () => {
 
       expect(NumberService.get).toBeCalled();
       expect(dispatch).toBeCalledWith({
-        payload: [
-          { costs: 1, number: 555000000 },
-        ],
+        payload: {
+          meta,
+          data: [
+            { costs: 1, number: 555000000 },
+          ],
+        },
         type: Numbers.RECEIVE,
       });
     });
@@ -63,6 +76,7 @@ describe('Store Numbers', () => {
       const dispatch = jest.fn();
       NumberService.get.mockResolvedValue({
         data: {
+          meta,
           data: collection,
         },
       });

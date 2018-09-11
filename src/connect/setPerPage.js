@@ -1,7 +1,8 @@
 import qs from 'query-string';
-import { withProps } from 'recompose';
+import { withProps, compose } from 'recompose';
 import { request } from '../store/modules/numbers';
 import { defaultQuery } from '../services/numbers';
+import withQuery from './withQuery';
 
 const event = props => (perPage) => {
   const query = {
@@ -16,7 +17,10 @@ const event = props => (perPage) => {
   });
 };
 
-export default withProps(props => ({
-  onChangePerPage: event(props),
-}));
+export default compose(
+  withQuery,
+  withProps(props => ({
+    onChangePerPage: event(props),
+  })),
+);
 

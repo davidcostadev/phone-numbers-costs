@@ -11,13 +11,22 @@ describe('withNumbers', () => {
   let store;
   let ComponentMock;
   let collection;
+  let meta;
 
   beforeEach(() => {
+    meta = {
+      page: 1,
+      perPage: 100,
+      totalPages: 10,
+    };
     collection = [
       { number: 555000001, costs: 1.01 },
     ];
     store = mockStore({
-      numbers: collection,
+      numbers: {
+        meta,
+        data: collection,
+      },
     });
     ComponentMock = () => <span>mock</span>;
   });

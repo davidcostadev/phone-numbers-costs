@@ -31,6 +31,8 @@
     &--disabled:hover {
       background-color: $primary-color-disabled;
       color: $text-color-disabled;
+
+      cursor: default;
     }
   }
 }

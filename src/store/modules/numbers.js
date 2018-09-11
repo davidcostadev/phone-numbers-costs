@@ -3,7 +3,10 @@ import Number, { defaultQuery } from '../../services/numbers';
 export const RECEIVE = 'number/receive';
 export const ERROR = 'number/error';
 
-export const init = [];
+export const init = {
+  meta: null,
+  data: [],
+};
 
 export const receive = payload => ({
   type: RECEIVE,
@@ -16,7 +19,7 @@ export const error = payload => ({
 });
 
 export const request = (dispatch, query = defaultQuery) => Number.get(query)
-  .then(({ data }) => dispatch(receive(data.data)))
+  .then(({ data }) => dispatch(receive(data)))
   .catch(err => dispatch(error(err)));
 
 export default (state = init, { type, payload }) => {

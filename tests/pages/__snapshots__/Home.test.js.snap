@@ -14,6 +14,41 @@ exports[`Home Component Render default 1`] = `
     </h1>
     <div
       className="topbar__right"
+    />
+  </header>
+  <main
+    className="wrap"
+  >
+    <div
+      className="numbers__list"
+    >
+      <div
+        className="numbers__empty"
+      >
+        no numbers found
+      </div>
+    </div>
+  </main>
+  <div
+    className="bottombar"
+  />
+</div>
+`;
+
+exports[`Home Component Render with props 1`] = `
+<div
+  className="page"
+>
+  <header
+    className="topbar"
+  >
+    <h1
+      className="topbar__title"
+    >
+      Phone and Costs
+    </h1>
+    <div
+      className="topbar__right"
     >
       <div
         className="select-per-page"
@@ -59,9 +94,32 @@ exports[`Home Component Render default 1`] = `
       className="numbers__list"
     >
       <div
-        className="numbers__empty"
+        className="numbers__item"
       >
-        no numbers found
+        <div
+          className="numbers__number"
+        >
+          555000000
+        </div>
+        <div
+          className="numbers__costs"
+        >
+          1
+        </div>
+      </div>
+      <div
+        className="numbers__item"
+      >
+        <div
+          className="numbers__number"
+        >
+          555000001
+        </div>
+        <div
+          className="numbers__costs"
+        >
+          2
+        </div>
       </div>
     </div>
   </main>
@@ -73,12 +131,16 @@ exports[`Home Component Render default 1`] = `
     >
       <button
         className="paginator__item paginator__item--disabled"
+        disabled={true}
+        id="paginator-previous"
+        onClick={[Function]}
         type="button"
       >
-        Previews
+        Previous
       </button>
       <button
         className="paginator__item paginator__item--active"
+        disabled={false}
         id="paginator-1"
         onClick={[Function]}
         type="button"
@@ -87,6 +149,7 @@ exports[`Home Component Render default 1`] = `
       </button>
       <button
         className="paginator__item"
+        disabled={false}
         id="paginator-2"
         onClick={[Function]}
         type="button"
@@ -95,6 +158,7 @@ exports[`Home Component Render default 1`] = `
       </button>
       <button
         className="paginator__item"
+        disabled={false}
         id="paginator-3"
         onClick={[Function]}
         type="button"
@@ -103,6 +167,9 @@ exports[`Home Component Render default 1`] = `
       </button>
       <button
         className="paginator__item"
+        disabled={false}
+        id="paginator-next"
+        onClick={[Function]}
         type="button"
       >
         Next

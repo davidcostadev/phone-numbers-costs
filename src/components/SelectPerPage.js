@@ -1,30 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Select from './forms/Select';
+import { paginatorType } from '../types';
 
 const options = [10, 50, 100, 250, 500].map(option => ({
   value: option,
   text: option,
 }));
 
-const SelectPerPage = ({ value, onChangePerPage }) => (
-  <div className="select-per-page">
-    <Select
-      id="per-page"
-      options={options}
-      value={value}
-      onChange={({ target }) => onChangePerPage(target.value)}
-    />
-  </div>
-);
+const SelectPerPage = ({ value, onChangePerPage, paginator }) => {
+  if (!paginator) {
+    return null;
+  }
+
+  return (
+    <div className="select-per-page">
+      <Select
+        id="per-page"
+        options={options}
+        value={value}
+        onChange={({ target }) => onChangePerPage(target.value)}
+      />
+    </div>
+  );
+};
 
 SelectPerPage.propTypes = {
   onChangePerPage: PropTypes.func.isRequired,
+  paginator: paginatorType,
   value: PropTypes.number,
 };
 
 SelectPerPage.defaultProps = {
   value: 100,
+  paginator: null,
 };
 
 
