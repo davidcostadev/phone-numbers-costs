@@ -8,8 +8,22 @@ configure({ adapter: new Adapter() });
 
 describe('SelectPerPage Component', () => {
   let onChangePerPage;
+  let paginator;
 
   beforeEach(() => {
+    paginator = {
+      maxPage: 3,
+      minPage: 1,
+      nextPage: 2,
+      nextPageExists: true,
+      page: 1,
+      pagesList: [1, 2, 3],
+      perPage: 10,
+      previousPage: null,
+      previousPageExists: false,
+      totalPages: 100,
+    };
+
     onChangePerPage = jest.fn();
   });
 
@@ -24,7 +38,11 @@ describe('SelectPerPage Component', () => {
 
     it('with props', () => {
       const tree = renderer.create((
-        <SelectPerPage value={50} onChangePerPage={onChangePerPage} />
+        <SelectPerPage
+          value={50}
+          onChangePerPage={onChangePerPage}
+          paginator={paginator}
+        />
       )).toJSON();
 
       expect(tree).toMatchSnapshot();
@@ -33,7 +51,11 @@ describe('SelectPerPage Component', () => {
 
   describe('Behavior', () => {
     it('click on onChangePerPage', () => {
-      const wrapper = shallow(<SelectPerPage onChangePerPage={onChangePerPage} />);
+      const wrapper = shallow((
+        <SelectPerPage
+          onChangePerPage={onChangePerPage}
+          paginator={paginator}
+        />));
 
       wrapper.find('#per-page').simulate('change', { target: { value: 50 } });
       expect(onChangePerPage).toBeCalledWith(50);
