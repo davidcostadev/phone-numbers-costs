@@ -9,7 +9,7 @@ exports[`SelectPerPage Component Render with props 1`] = `
   <select
     id="per-page"
     onChange={[Function]}
-    value={50}
+    value={10}
   >
     <option
       value={10}

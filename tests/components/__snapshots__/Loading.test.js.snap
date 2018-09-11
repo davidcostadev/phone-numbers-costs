@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading Component Render is loading 1`] = `
+<div
+  className="page"
+>
+  <div
+    className="page__loader page__loader--loading"
+  >
+    loading...
+  </div>
+  <div>
+    children
+  </div>
+</div>
+`;
+
+exports[`Loading Component Render not loading 1`] = `
+<div
+  className="page"
+>
+  <div
+    className="page__loader"
+  >
+    loading...
+  </div>
+  <div>
+    children
+  </div>
+</div>
+`;

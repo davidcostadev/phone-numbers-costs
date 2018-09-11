@@ -8,7 +8,7 @@ const options = [10, 50, 100, 250, 500].map(option => ({
   text: option,
 }));
 
-const SelectPerPage = ({ value, onChangePerPage, paginator }) => {
+const SelectPerPage = ({ onChangePerPage, paginator }) => {
   if (!paginator) {
     return null;
   }
@@ -18,7 +18,7 @@ const SelectPerPage = ({ value, onChangePerPage, paginator }) => {
       <Select
         id="per-page"
         options={options}
-        value={value}
+        value={paginator.perPage}
         onChange={({ target }) => onChangePerPage(target.value)}
       />
     </div>
@@ -28,11 +28,9 @@ const SelectPerPage = ({ value, onChangePerPage, paginator }) => {
 SelectPerPage.propTypes = {
   onChangePerPage: PropTypes.func.isRequired,
   paginator: paginatorType,
-  value: PropTypes.number,
 };
 
 SelectPerPage.defaultProps = {
-  value: 100,
   paginator: null,
 };
 

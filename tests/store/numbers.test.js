@@ -9,6 +9,7 @@ describe('Store Numbers', () => {
   let state;
   let collection;
   let meta;
+  let response;
 
   beforeEach(() => {
     state = Numbers.init;
@@ -20,6 +21,7 @@ describe('Store Numbers', () => {
     collection = [
       { number: 555000000, costs: 1 },
     ];
+    response = { meta, data: collection };
   });
 
   describe('reduce', () => {
@@ -30,21 +32,52 @@ describe('Store Numbers', () => {
 
       expect(Numbers.default(undefined, action)).toEqual({
         meta: null,
+        loading: false,
         data: [],
       });
     });
 
     it('RECEIVE', () => {
-      const payload = [
-        { number: 555000000, costs: 1 },
-      ];
+      const payload = {
+        loading: false,
+        ...response,
+      };
+
       const action = {
         type: Numbers.RECEIVE,
         payload,
       };
-      expect(Numbers.default(state, action)).toEqual([
-        { number: 555000000, costs: 1 },
-      ]);
+      expect(Numbers.default(state, action)).toEqual({
+        loading: false,
+        ...response,
+      });
+    });
+
+    it('ERROR', () => {
+      const action = {
+        type: Numbers.ERROR,
+        payload: {
+          error: new Error('Async Error'),
+          loading: false,
+        },
+      };
+      expect(Numbers.default(state, action)).toEqual({
+        ...Numbers.init,
+        loading: false,
+      });
+    });
+
+    it('LOADING', () => {
+      const action = {
+        type: Numbers.LOADING,
+        payload: {
+          loading: true,
+        },
+      };
+      expect(Numbers.default(state, action)).toEqual({
+        ...Numbers.init,
+        loading: true,
+      });
     });
   });
 
@@ -63,6 +96,7 @@ describe('Store Numbers', () => {
       expect(NumberService.get).toBeCalled();
       expect(dispatch).toBeCalledWith({
         payload: {
+          loading: false,
           meta,
           data: [
             { costs: 1, number: 555000000 },
@@ -96,8 +130,18 @@ describe('Store Numbers', () => {
       await Numbers.request(dispatch);
 
       expect(NumberService.get).toBeCalled();
-      expect(dispatch).toBeCalledWith({
-        payload: new Error('Async Error'),
+      expect(dispatch.mock.calls[0][0]).toEqual({
+        payload: {
+          loading: true,
+        },
+        type: Numbers.LOADING,
+      });
+
+      expect(dispatch.mock.calls[1][0]).toEqual({
+        payload: {
+          error: new Error('Async Error'),
+          loading: false,
+        },
         type: Numbers.ERROR,
       });
     });
@@ -105,9 +149,12 @@ describe('Store Numbers', () => {
 
   describe('actions', () => {
     it('receive', () => {
-      expect(Numbers.receive(collection)).toEqual({
+      expect(Numbers.receive(response)).toEqual({
         type: Numbers.RECEIVE,
-        payload: collection,
+        payload: {
+          loading: false,
+          ...response,
+        },
       });
     });
 
@@ -115,7 +162,19 @@ describe('Store Numbers', () => {
       const error = new Error('This is an error');
       expect(Numbers.error(error)).toEqual({
         type: Numbers.ERROR,
-        payload: error,
+        payload: {
+          error,
+          loading: false,
+        },
+      });
+    });
+
+    it('loading', () => {
+      expect(Numbers.loading()).toEqual({
+        type: Numbers.LOADING,
+        payload: {
+          loading: true,
+        },
       });
     });
   });

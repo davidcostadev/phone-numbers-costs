@@ -4,6 +4,11 @@ exports[`Home Component Render default 1`] = `
 <div
   className="page"
 >
+  <div
+    className="page__loader"
+  >
+    loading...
+  </div>
   <header
     className="topbar"
   >
@@ -39,6 +44,11 @@ exports[`Home Component Render with props 1`] = `
 <div
   className="page"
 >
+  <div
+    className="page__loader"
+  >
+    loading...
+  </div>
   <header
     className="topbar"
   >
@@ -56,7 +66,7 @@ exports[`Home Component Render with props 1`] = `
         <select
           id="per-page"
           onChange={[Function]}
-          value={100}
+          value={2}
         >
           <option
             value={10}

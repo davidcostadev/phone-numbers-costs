@@ -16,6 +16,31 @@ body {
   margin-top: $topbar-height;
   padding-bottom: $vertical-space;
   padding-top: $vertical-space;
+
+  &__loader {
+    align-items: center;
+    background-color: rgba($white, 0.6);
+    display: none;
+    font-size: 44px;
+    font-weight: bold;
+    height: 100%;
+    left: 0;
+    justify-content: center;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 900;
+
+    &--loading {
+      display: flex;
+    }
+
+    img {
+      max-width: 100px;
+      width: 100%;
+    }
+  }
 }
 
 .wrap {

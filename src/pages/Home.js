@@ -7,6 +7,7 @@ import SelectPerPage from '../components/SelectPerPage';
 import Topbar from '../components/Topbar';
 import Bottombar from '../components/Bottombar';
 import Paginator from '../components/Paginator';
+import Page from '../components/Loading';
 
 import withNumbers from '../connect/withNumbers';
 import withPaginator from '../connect/withPaginator';
@@ -19,8 +20,9 @@ const App = ({
   onChangePerPage,
   onClickPage,
   paginator,
+  loading,
 }) => (
-  <div className="page">
+  <Page loading={loading}>
     <Topbar title="Phone and Costs">
       <SelectPerPage paginator={paginator} onChangePerPage={onChangePerPage} />
     </Topbar>
@@ -30,7 +32,7 @@ const App = ({
     <Bottombar>
       <Paginator paginator={paginator} onClickPage={onClickPage} />
     </Bottombar>
-  </div>
+  </Page>
 );
 
 App.propTypes = {
@@ -38,6 +40,7 @@ App.propTypes = {
   paginator: paginatorType,
   onChangePerPage: PropTypes.func.isRequired,
   onClickPage: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 App.defaultProps = {
