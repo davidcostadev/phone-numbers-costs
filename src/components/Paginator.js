@@ -54,55 +54,16 @@ const List = ({ currentPage, pagesList, onClickPage }) => pagesList
     />
   ));
 
-const Previous = ({ previousPageExists, previousPage, onClickPage }) => (
-  <Item
-    id="previous"
-    page={previousPage}
-    text="Previous"
-    isDisabled={!previousPageExists}
-    onClickPage={onClickPage}
-  />
-);
-
-Previous.propTypes = {
-  previousPageExists: PropTypes.bool.isRequired,
-  previousPage: PropTypes.number,
-  onClickPage: PropTypes.func.isRequired,
-};
-
-Previous.defaultProps = {
-  previousPage: null,
-};
-
-const Next = ({ nextPageExists, nextPage, onClickPage }) => (
-  <Item
-    id="next"
-    page={nextPage}
-    text="Next"
-    isDisabled={!nextPageExists}
-    onClickPage={onClickPage}
-  />
-);
-
-Next.propTypes = {
-  nextPageExists: PropTypes.bool.isRequired,
-  nextPage: PropTypes.number,
-  onClickPage: PropTypes.func.isRequired,
-};
-
-Next.defaultProps = {
-  nextPage: null,
-};
-
-
 const Paginator = ({ onClickPage, paginator }) => {
   if (!paginator) return null;
 
   return (
     <div className="paginator">
-      <Previous
-        previousPageExists={paginator.previousPageExists}
-        previousPage={paginator.previousPage}
+      <Item
+        id="previous"
+        page={paginator.previousPage}
+        text="Previous"
+        isDisabled={!paginator.previousPageExists}
         onClickPage={onClickPage}
       />
       <List
@@ -110,9 +71,11 @@ const Paginator = ({ onClickPage, paginator }) => {
         currentPage={paginator.page}
         onClickPage={onClickPage}
       />
-      <Next
-        nextPageExists={paginator.nextPageExists}
-        nextPage={paginator.nextPage}
+      <Item
+        id="next"
+        page={paginator.nextPage}
+        text="Next"
+        isDisabled={!paginator.nextPageExists}
         onClickPage={onClickPage}
       />
     </div>
