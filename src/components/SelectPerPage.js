@@ -13,7 +13,7 @@ const SelectPerPage = ({ value, onChangePerPage }) => (
       id="per-page"
       options={options}
       value={value}
-      onChange={onChangePerPage}
+      onChange={({ target }) => onChangePerPage(target.value)}
     />
   </div>
 );

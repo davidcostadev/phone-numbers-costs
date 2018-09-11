@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Numbers Component Render default 1`] = `
+<div
+  className="numbers__list"
+>
+  <div
+    className="numbers__empty"
+  >
+    no numbers found
+  </div>
+</div>
+`;
+
+exports[`Numbers Component Render with props 1`] = `
+<div
+  className="numbers__list"
+>
+  <div
+    className="numbers__item"
+  >
+    <div
+      className="numbers__number"
+    >
+      555000000
+    </div>
+    <div
+      className="numbers__costs"
+    >
+      1
+    </div>
+  </div>
+  <div
+    className="numbers__item"
+  >
+    <div
+      className="numbers__number"
+    >
+      555000001
+    </div>
+    <div
+      className="numbers__costs"
+    >
+      1.01
+    </div>
+  </div>
+</div>
+`;

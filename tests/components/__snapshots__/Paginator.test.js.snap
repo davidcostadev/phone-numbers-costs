@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paginator Component Render default 1`] = `
+<div
+  className="paginator"
+>
+  <button
+    className="paginator__item paginator__item--disabled"
+    type="button"
+  >
+    Previews
+  </button>
+  <button
+    className="paginator__item paginator__item--active"
+    id="paginator-1"
+    onClick={[Function]}
+    type="button"
+  >
+    1
+  </button>
+  <button
+    className="paginator__item"
+    id="paginator-2"
+    onClick={[Function]}
+    type="button"
+  >
+    2
+  </button>
+  <button
+    className="paginator__item"
+    id="paginator-3"
+    onClick={[Function]}
+    type="button"
+  >
+    3
+  </button>
+  <button
+    className="paginator__item"
+    type="button"
+  >
+    Next
+  </button>
+</div>
+`;

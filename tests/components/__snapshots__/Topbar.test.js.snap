@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Topbar Component Render default 1`] = `
+<header
+  className="topbar"
+>
+  <h1
+    className="topbar__title"
+  >
+    Titulo
+  </h1>
+  <div
+    className="topbar__right"
+  >
+    <div>
+      children
+    </div>
+  </div>
+</header>
+`;

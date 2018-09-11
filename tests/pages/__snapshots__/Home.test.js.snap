@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component Render default 1`] = `
+<div
+  id="page"
+>
+  <header
+    className="topbar"
+  >
+    <h1
+      className="topbar__title"
+    >
+      Phone and Costs
+    </h1>
+    <div
+      className="topbar__right"
+    >
+      <div
+        className="select-per-page"
+      >
+        <select
+          id="per-page"
+          onChange={[Function]}
+          value={100}
+        >
+          <option
+            value={10}
+          >
+            10
+          </option>
+          <option
+            value={50}
+          >
+            50
+          </option>
+          <option
+            value={100}
+          >
+            100
+          </option>
+          <option
+            value={250}
+          >
+            250
+          </option>
+          <option
+            value={500}
+          >
+            500
+          </option>
+        </select>
+      </div>
+    </div>
+  </header>
+  <main
+    id="wrap"
+  >
+    <div
+      className="numbers__list"
+    >
+      <div
+        className="numbers__empty"
+      >
+        no numbers found
+      </div>
+    </div>
+  </main>
+  <div
+    className="bottombar"
+  >
+    <div
+      className="paginator"
+    >
+      <button
+        className="paginator__item paginator__item--disabled"
+        type="button"
+      >
+        Previews
+      </button>
+      <button
+        className="paginator__item paginator__item--active"
+        id="paginator-1"
+        onClick={[Function]}
+        type="button"
+      >
+        1
+      </button>
+      <button
+        className="paginator__item"
+        id="paginator-2"
+        onClick={[Function]}
+        type="button"
+      >
+        2
+      </button>
+      <button
+        className="paginator__item"
+        id="paginator-3"
+        onClick={[Function]}
+        type="button"
+      >
+        3
+      </button>
+      <button
+        className="paginator__item"
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>
+`;

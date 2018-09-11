@@ -9,7 +9,7 @@ class Select extends React.Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
-      value: typeof props.value !== 'undefined' ? props.value : '',
+      value: props.value,
     };
   }
 
